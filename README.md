@@ -6,7 +6,7 @@ A lightweight Planner → Executor → Reviewer AI pipeline (FastAPI + Python) �
 
 ## 📑 Table of Contents
 
-- [Overview](##Overview)
+- [Overview](#Overview)
 - [🧩 1. Primary Use Case](#-1-primary-use-case)
 - [📂 2. Project Structure](#-2-project-structure)
 - [🏗️ 3. System Architecture](#️-3-system-architecture)
@@ -26,8 +26,8 @@ A lightweight Planner → Executor → Reviewer AI pipeline (FastAPI + Python) �
 - [📝 9. Example Full Output (Illustrative)](#-9-example-full-output-illustrative)
 - [🏆 10. Why This Project Is Valuable](#-10-why-this-project-is-valuable)
 - [✔️ 11. Extending the Project](#️-11-extending-the-project)
-- [12. Contributing](##12-contributing)
-- [13. License](##13-license)
+- [12. Contributing](#12-contributing)
+- [13. License](#13-license)
 
 ---
 
@@ -86,35 +86,34 @@ agents-capstone/
 
 ## 🏗️ 3. System Architecture
 
-            ┌──────────────────────────┐
-            │          Client           │
-            │ (curl, frontend, demo.py) │
-            └─────────────┬────────────┘
+                  ┌──────────────────────────┐
+                  │          Client          │
+                  │ (curl, frontend, demo.py)│
+                  └─────────────┬────────────┘
                           POST /tasks
                                 │
                                 ▼
                   ┌─────────────────────────┐
-                  │       FastAPI API        │
-                  │  (app/main.py endpoints) │
+                  │       FastAPI API       │
+                  │  (app/main.py endpoints)│
                   └─────────────┬───────────┘
                                 │
                                 ▼
-                   ┌────────────────────────┐
-                   │      Orchestrator       │
-                   │ (Submit, run, monitor)  │
-                   └───────────┬────────────┘
-      ┌────────────────────────┼──────────────────────────┐
-      ▼                        ▼                          ▼
-┌────────────┐        ┌─────────────┐             ┌────────────┐
-│ Planner    │        │ Executor    │             │ Reviewer   │
-│ (steps)    │        │ (per step)  │             │ (final QA) │
-└────────────┘        └─────────────┘             └────────────┘
-
-                               ▼  
-                     ┌────────────────┐
-                     │  Task Storage  │
-                     │ (in-memory)    │
-                     └────────────────┘
+                  ┌─────────────────────────┐
+                  │      Orchestrator       │
+                  │ (Submit, run, monitor)  │
+                  └─────────────┬───────────┘
+       ┌────────────────────────┼──────────────────────────┐
+       ▼                        ▼                          ▼
+┌────────────┐           ┌─────────────┐            ┌─────────────┐
+│  Planner   │           │  Executor   │            │  Reviewer   │
+│  (steps)   │           │  (per step) │            │  (final QA) │
+└────────────┘           └─────────────┘            └─────────────┘
+                                ▼  
+                        ┌────────────────┐
+                        │  Task Storage  │
+                        │ (in-memory)    │
+                        └────────────────┘
 
 ---
 
@@ -178,10 +177,11 @@ faiss-cpu==1.7.4  # optional
 ## 🛠️ 6. Installation
 
 ```bash
-git clone <your-repo-url>
-cd agents-capstone
+git clone https://github.com/SANJAI-s0/Adaptive-Multi-Agent-Orchestrator-for-Automated-Task-Planning-Execution.git
+cd Adaptive-Multi-Agent-Orchestrator-for-Automated-Task-Planning-Execution
 python -m venv .venv
-source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+source .venv/bin/activate #Linux,IOS
+.venv\Scripts\Activate.ps1 # Windows PowerShell
 pip install -r requirements.txt
 ```
 
@@ -287,6 +287,8 @@ Contributions are welcome. Suggested workflow:
 
 ## 13. License
 
-Choose an appropriate license for your project (e.g., MIT). Add a `LICENSE` file if you publish this repo.
+MIT License
+
+Copyright (c) 2025 SANJAI S
 
 ---
