@@ -68,17 +68,33 @@ Typical applications include research assistants, automated planning workflows, 
 ```
 agents-capstone/
 ├─ app/
-│  ├─ main.py                # FastAPI endpoints
-│  ├─ orchestrator.py        # Task management + agent loop
-│  ├─ llm.py                 # MockLLM (offline), adapter layer
-│  ├─ storage.py             # In-memory task storage
 │  ├─ agents/
 │  │  ├─ planner.py          # Planner agent
 │  │  ├─ executor.py         # Executor agent
 │  │  └─ reviewer.py         # Reviewer agent
+│  ├─ llm.py                 # LLM / adapter layer
+│  ├─ main.py                # FastAPI entry point
+│  ├─ orchestrator.py        # Task orchestration logic
+│  └─ storage.py             # In-memory / task storage
+│
+├─ frontend/
+│  ├─ src/
+│  │  ├─ App.jsx             # Main React component
+│  │  ├─ api.js              # API calls to backend
+│  │  ├─ main.jsx            # React entry point
+│  │  └─ styles.css          # Global styles
+│  ├─ index.html             # Vite HTML entry
+│  ├─ package.json           # Frontend dependencies
+│  ├─ package-lock.json      # Dependency lockfile
+│  ├─ vite.config.js         # Vite configuration
+│  ├─ Dockerfile             # Frontend container (optional)
+│  └─ node_modules/          # Ignored by git
+│
 ├─ demo.py                   # CLI demo runner
 ├─ requirements.txt          # Python dependencies
 ├─ Dockerfile                # Backend container (optional)
+├─ .gitignore                # Git ignore rules
+├─ LICENSE                   # Licence
 └─ README.md                 # Documentation
 ```
 
